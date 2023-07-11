@@ -12,4 +12,6 @@ resource "aws_instance" "ssm-instances" {
     "Name" = "ssm-instance-${count.index+1}"
     "team" = "dev-ops"
   }
+
+  iam_instance_profile = aws_iam_instance_profile.ec2-readonly.name
 }
